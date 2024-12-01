@@ -1,10 +1,11 @@
 [project]
-name = "advent_of_code_20XX"
+name = "advent_of_code_2024"
 version = "1.0.0"
 description = "Advent of Code 20XX solutions in Python"
 license = {file = "LICENSE"}
 authors = [
-  {name = "Valentin PORCHET", email = "valentin.porchet@proton.me"}
+  {name = "Valentin PORCHET", email = "valentin.porchet@proton.me"},
+  {name = "Ehsan Heydari", email = "ehsan.heydari.yk@gmail.com"},
 ]
 readme = "README.md"
 requires-python = ">=3.13"
