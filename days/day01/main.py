@@ -13,16 +13,12 @@ class PuzzleSolver(AbstractPuzzleSolver):
 
             left, right = [], []
             for line in lines:
-                words = line.split()
-                left.append(int(words[0]))
-                right.append(int(words[1]))
+                l, r = line.split()
+                left.append(int(l))
+                right.append(int(r))
             left.sort()
             right.sort()
-
-            res = 0
-            for i in range(len(left)):
-                res += abs(left[i] - right[i])
-            return res    
+            return sum(abs(l - r) for l, r in zip(left, right))
 
     ###########################
     # DAY 01 - Second Part
@@ -31,18 +27,9 @@ class PuzzleSolver(AbstractPuzzleSolver):
     def _solve_second_part(self) -> int:
         with open("days/day01/input.txt", "r") as f:
             lines = f.read().splitlines()
-            left, right = [], []
+            left, rightCache = [], {}
             for line in lines:
-                words = line.split()
-                left.append(int(words[0]))
-                right.append(int(words[1]))
-            left.sort()
-            rightCache = {}
-            for n in right:
-                rightCache[n] = rightCache.get(n, 0) + 1
-
-            res = 0
-            for n in left:
-                rightVal = rightCache.get(n, 0)
-                res += n * rightVal
-            return res
+                l, r = line.split()
+                left.append(int(l))
+                rightCache[int(r)] = rightCache.get(int(r), 0) + 1
+            return sum(n * rightCache.get(n, 0) for n in left)
