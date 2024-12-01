@@ -30,6 +30,6 @@ class PuzzleSolver(AbstractPuzzleSolver):
             left, rightCache = [], {}
             for line in lines:
                 l, r = line.split()
-                left.append(int(l))
-                rightCache[int(r)] = rightCache.get(int(r), 0) + 1
-            return sum(n * rightCache.get(n, 0) for n in left)
+                left.append(l)
+                rightCache[r] = rightCache.get(r, 0) + 1
+            return sum(int(n) * rightCache.get(n, 0) for n in left)
