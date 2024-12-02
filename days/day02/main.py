@@ -2,9 +2,6 @@ from scripts.utils import AbstractPuzzleSolver
 
 
 class PuzzleSolver(AbstractPuzzleSolver):
-    ###########################
-    # DAY 02 - First Part
-    ###########################
     def isValid(self, nums, with_tolerance=False):
         if len(nums) < 2:
             return 1
@@ -25,6 +22,9 @@ class PuzzleSolver(AbstractPuzzleSolver):
                 return 0
         return 1
 
+    ###########################
+    # DAY 02 - First Part
+    ###########################
     def _solve_first_part(self) -> int:
         with open("days/day02/input.txt", "r") as f:
             lines = f.read().splitlines()
