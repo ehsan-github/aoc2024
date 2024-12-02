@@ -10,14 +10,14 @@ class PuzzleSolver(AbstractPuzzleSolver):
             if (nums[i] == nums[i - 1]) or (((nums[i] - nums[i - 1]) > 0) != ascend) or (abs(nums[i] - nums[i -1]) > 3):
                 if with_tolerance:
                     if i == 2:
-                        res = self.isValid(nums[1:], False)
+                        res = self.isValid(nums[1:])
                         if res == 1:
                             return 1
                     x = nums.pop(i)
-                    res = self.isValid(nums, False)
+                    res = self.isValid(nums)
                     if res == 0:
                         nums[i - 1] = x
-                        res = self.isValid(nums, False)
+                        res = self.isValid(nums)
                     return res
                 return 0
         return 1
