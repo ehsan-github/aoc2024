@@ -27,7 +27,6 @@ class PuzzleSolver(AbstractPuzzleSolver):
                 if x == '':
                     do = z == 'do()'
                     continue
-                if not do:
-                    continue
-                res += int(x) * int(y)
+                if do:
+                    res += int(x) * int(y)
             return res
