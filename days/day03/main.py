@@ -8,7 +8,7 @@ class PuzzleSolver(AbstractPuzzleSolver):
     ###########################
 
     def _solve_first_part(self) -> int:
-        with open("days/day03/input.txt", "r") as f:
+        with open("days/day03/input.txt") as f:
             lines = f.read()
             return sum(int(x) * int(y) for x, y in re.findall('mul\((\d+),(\d+)\)', lines))
 
@@ -17,7 +17,7 @@ class PuzzleSolver(AbstractPuzzleSolver):
     ###########################
 
     def _solve_second_part(self) -> int:
-        with open("days/day03/input.txt", "r") as f:
+        with open("days/day03/input.txt") as f:
             lines = f.read()
             allfinds = re.findall('mul\((\d+),(\d+)\)|(do\(\)|don\'t\(\))',lines)
 
